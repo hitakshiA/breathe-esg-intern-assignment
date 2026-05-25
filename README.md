@@ -54,7 +54,7 @@ on a $4/mo 512 MiB DigitalOcean droplet. Caddy holds another ~48 MiB.
 You need Docker — that's the only dependency. No node, no Python, no Postgres.
 
 ```bash
-git clone https://github.com/<owner>/breathe-esg.git
+git clone https://github.com/hitakshiA/breathe-esg-intern-assignment.git
 cd breathe-esg
 docker build -t breathe-esg .
 docker run -p 8000:8000 -v ./data:/data breathe-esg
