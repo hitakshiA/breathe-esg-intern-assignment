@@ -55,7 +55,7 @@ You need Docker — that's the only dependency. No node, no Python, no Postgres.
 
 ```bash
 git clone https://github.com/hitakshiA/breathe-esg-intern-assignment.git
-cd breathe-esg
+cd breathe-esg-intern-assignment
 docker build -t breathe-esg .
 docker run -p 8000:8000 -v ./data:/data breathe-esg
 open http://localhost:8000
