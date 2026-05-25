@@ -1,0 +1,14 @@
+**/node_modules
+**/dist
+**/__pycache__
+**/.venv
+**/venv
+**/.env
+**/.env.*
+**/db.sqlite3
+**/staticfiles
+**/.DS_Store
+**/.git
+**/.gitignore
+BUILD_PLAN.md
+RESEARCH_BRIEF.md

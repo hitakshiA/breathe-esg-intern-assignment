@@ -1,0 +1,17 @@
+report_id,employee_id,employee_name,expense_type,transaction_date,origin_iata,destination_iata,cabin_class,nights,vendor,amount,currency,trip_purpose,hotel_country,vehicle_type,distance_km
+RPT-2024-00142,EMP-101,Priya Sharma,Airfare,2024-01-15,LHR,JFK,Economy,,British Airways,850.00,GBP,Client visit — Acme NY,,,
+RPT-2024-00142,EMP-101,Priya Sharma,Hotel,2024-01-15,,,,3,Marriott Times Square,1840.00,USD,Client visit — Acme NY,US,,
+RPT-2024-00142,EMP-101,Priya Sharma,Taxi,2024-01-15,,,,,Uber,118.00,USD,Client visit — Acme NY,,,32
+RPT-2024-00142,EMP-101,Priya Sharma,Airfare,2024-01-19,JFK,LHR,Economy,,British Airways,820.00,GBP,Client visit — Acme NY,,,
+RPT-2024-00207,EMP-205,Daniel Cohen,Airfare,2024-02-08,SFO,FRA,Business,,Lufthansa,4250.00,USD,Engineering summit,,,
+RPT-2024-00207,EMP-205,Daniel Cohen,Hotel,2024-02-08,,,,4,Steigenberger Frankfurter Hof,1820.00,EUR,Engineering summit,DE,,
+RPT-2024-00207,EMP-205,Daniel Cohen,Airfare,2024-02-12,FRA,SFO,Business,,Lufthansa,4180.00,USD,Engineering summit,,,
+RPT-2024-00318,EMP-317,Rin Sato,Airfare,2024-03-02,NRT,SIN,Premium Economy,,ANA,2840.00,JPY,Regional ops review,,,
+RPT-2024-00318,EMP-317,Rin Sato,Hotel,2024-03-02,,,,5,Marina Bay Sands,2200.00,SGD,Regional ops review,SG,,
+RPT-2024-00318,EMP-317,Rin Sato,Airfare,2024-03-07,SIN,NRT,Economy,,ANA,1820.00,JPY,Regional ops review,,,
+RPT-2024-00404,EMP-422,Mike O'Brien,Car Rental,2024-03-20,,,,,Hertz,185.00,USD,Site visit Texas,,SUV,420
+RPT-2024-00501,EMP-101,Priya Sharma,Airfare,2024-04-12,LHR,ZZZ,Economy,,Unknown Carrier,420.00,GBP,Conference — destination TBD,,,
+RPT-2024-00518,EMP-205,Daniel Cohen,Airfare,2024-04-22,SFO,LAX,Economy,,United Airlines,310.00,USD,Sales offsite,,,
+RPT-2024-00518,EMP-205,Daniel Cohen,Hotel,2024-04-22,,,,2,Hyatt Regency LA,640.00,USD,Sales offsite,US,,
+RPT-2024-00644,EMP-422,Mike O'Brien,Airfare,2024-05-10,LHR,DEL,Business,,Air India,3850.00,GBP,Acquisition diligence,,,
+RPT-2024-00644,EMP-422,Mike O'Brien,Hotel,2024-05-10,,,,6,Taj Mahal Hotel New Delhi,2150.00,INR,Acquisition diligence,IN,,

@@ -1,0 +1,180 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Base layer — typography, focus, body
+   ──────────────────────────────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    /* Modular scale, fixed (this is an app UI, not marketing) */
+    --step-0: 0.875rem;   /* 14 — body s */
+    --step-1: 1rem;       /* 16 — body */
+    --step-2: 1.125rem;   /* 18 */
+    --step-3: 1.375rem;   /* 22 */
+    --step-4: 1.75rem;    /* 28 */
+    --step-5: 2.5rem;     /* 40 */
+    --step-6: 3.5rem;     /* 56 */
+    --line-display: 1.04;
+    --line-body: 1.5;
+  }
+
+  html, body, #root { height: 100%; }
+
+  html {
+    font-feature-settings: "ss01" on, "cv11" on;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-brand-paper text-brand-ink font-sans antialiased;
+    font-size: var(--step-1);
+    line-height: var(--line-body);
+  }
+
+  /* Tabular figures by default in tables and the .nums utility */
+  table, .nums { font-variant-numeric: tabular-nums lining-nums; }
+
+  h1, h2, h3, h4 {
+    @apply font-display;
+    line-height: var(--line-display);
+    letter-spacing: -0.012em;
+    color: theme(colors.brand.ink);
+  }
+
+  /* Reset the floating focus outline to a more refined ring */
+  *:focus-visible {
+    outline: 2px solid theme(colors.brand.green.400);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* Selection — tinted toward brand */
+  ::selection {
+    background: theme(colors.brand.green.200);
+    color: theme(colors.brand.ink);
+  }
+
+  /* Scrollbars: narrow, ink-tinted */
+  * { scrollbar-width: thin; scrollbar-color: theme(colors.brand.rule) transparent; }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Components — minimal, no drop shadows, 1px rule lines only
+   ──────────────────────────────────────────────────────────────────────────── */
+@layer components {
+  /* ──── Buttons ───────────────────────────────────────────────────────── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-3.5 py-2 rounded text-[13px] font-medium
+           transition-colors duration-150
+           disabled:opacity-40 disabled:cursor-not-allowed;
+  }
+  .btn-primary {
+    @apply btn bg-brand-ink text-white hover:bg-brand-mid;
+  }
+  .btn-brand {
+    /* used for the one signature CTA — auditor bundle download */
+    @apply btn bg-brand-green-500 text-white hover:bg-brand-green-700;
+  }
+  .btn-secondary {
+    @apply btn bg-brand-surface text-brand-ink border border-brand-rule hover:bg-brand-green-50;
+  }
+  .btn-ghost {
+    @apply btn text-brand-mid hover:text-brand-ink hover:bg-brand-rule2;
+  }
+  .btn-danger {
+    @apply btn bg-brand-surface text-red-800 border border-red-200 hover:bg-red-50;
+  }
+
+  /* ──── Surfaces ──────────────────────────────────────────────────────── */
+  .surface {
+    /* the only "card" — 1px rule lines, NO drop shadow */
+    @apply bg-brand-surface border border-brand-rule rounded-md;
+  }
+  .surface-inset {
+    @apply bg-brand-green-50/60 border border-brand-rule2 rounded;
+  }
+  .rule {
+    @apply border-brand-rule;
+  }
+
+  /* ──── Chips — scope, status, quality ────────────────────────────────── */
+  .chip {
+    @apply inline-flex items-center gap-1 px-1.5 py-0.5 rounded text-[11px] font-medium uppercase tracking-widerlabel;
+    font-variant-numeric: tabular-nums;
+  }
+  .chip-scope-1 { @apply chip bg-brand-green-100 text-brand-green-800; }
+  .chip-scope-2 { @apply chip bg-brand-teal-100 text-brand-teal-700; }
+  .chip-scope-3 { @apply chip bg-brand-purple-100 text-brand-purple-700; }
+
+  .chip-pending  { @apply chip bg-amber-50 text-amber-800; }
+  .chip-approved { @apply chip bg-brand-green-100 text-brand-green-800; }
+  .chip-rejected { @apply chip bg-red-50 text-red-800; }
+  .chip-warn     { @apply chip bg-orange-50 text-orange-800; }
+
+  .chip-quality-1 { @apply chip bg-brand-green-50 text-brand-green-800; }
+  .chip-quality-2 { @apply chip bg-amber-50 text-amber-800; }
+  .chip-quality-3 { @apply chip bg-orange-50 text-orange-800; }
+
+  /* ──── Nav ───────────────────────────────────────────────────────────── */
+  .nav-link {
+    @apply inline-flex items-center gap-2 px-2.5 py-1.5 text-[13px] font-medium text-brand-mid
+           border-b-2 border-transparent hover:text-brand-ink transition-colors;
+  }
+  .nav-link.active {
+    @apply text-brand-ink border-brand-green-500;
+  }
+
+  /* ──── Tables ────────────────────────────────────────────────────────── */
+  .table-th {
+    @apply px-3 py-2.5 text-left text-[10.5px] font-semibold uppercase tracking-widerlabel text-brand-subtle border-b border-brand-rule;
+  }
+  .table-td {
+    @apply px-3 py-2.5 text-[13.5px] text-brand-ink/90 align-top border-b border-brand-rule2;
+  }
+  tr.row-hover { @apply hover:bg-brand-green-50/40 cursor-pointer; }
+  tr.row-selected { @apply bg-brand-green-50; }
+
+  /* ──── Labels ────────────────────────────────────────────────────────── */
+  .eyebrow {
+    @apply text-[10.5px] font-semibold uppercase tracking-widerlabel text-brand-subtle;
+  }
+  .meta {
+    @apply text-[12px] text-brand-mid;
+  }
+  .code {
+    @apply font-mono text-[12px] text-brand-ink;
+  }
+
+  /* ──── Inputs ────────────────────────────────────────────────────────── */
+  .input {
+    @apply w-full bg-brand-surface text-brand-ink text-[13.5px]
+           px-3 py-2 rounded border border-brand-rule
+           focus:outline-none focus:border-brand-green-500 focus:ring-2 focus:ring-brand-green-200
+           transition-colors;
+  }
+
+  /* ──── Editorial helpers ─────────────────────────────────────────────── */
+  .lede {
+    /* Display lede — used on /report */
+    font-family: theme(fontFamily.display);
+    font-size: clamp(2rem, 3.4vw, var(--step-6));
+    line-height: 1.02;
+    letter-spacing: -0.022em;
+    color: theme(colors.brand.ink);
+  }
+  .num-display {
+    font-feature-settings: "tnum", "lnum", "ss01";
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* ────────────────────────────────────────────────────────────────────────────
+   Utilities
+   ──────────────────────────────────────────────────────────────────────────── */
+@layer utilities {
+  .tnum { font-variant-numeric: tabular-nums lining-nums; }
+  .underline-offset-3 { text-underline-offset: 3px; }
+}

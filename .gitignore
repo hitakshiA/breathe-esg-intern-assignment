@@ -1,0 +1,27 @@
+__pycache__/
+*.pyc
+*.pyo
+*.sqlite3
+*.sqlite3-journal
+db.sqlite3*
+node_modules/
+dist/
+build/
+.venv/
+venv/
+.env
+.env.*
+!.env.example
+staticfiles/
+backend/server/static_react/
+data/
+.DS_Store
+.idea/
+.vscode/
+*.log
+
+# Internal scratchpads — not part of the submission
+RESEARCH_BRIEF.md
+BUILD_PLAN.md
+.impeccable.md
+.agents/
